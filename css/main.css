@@ -20,10 +20,16 @@ main {
   padding: 24px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 24px;
+  min-height: 76vh;
+}
+
+main > div {
+  padding: 24px;
 }
 
 h1 {
-  margin-bottom: 0;
+  margin: 0;
 }
 
 h2 {
@@ -41,4 +47,14 @@ header {
   box-shadow: var(--main) 0px 1px 4px, var(--main) 0px 0px 0px 3px;
   padding: 24px;
   box-sizing: border-box;
+}
+
+pre {
+  display: inline;
+  background-color: var(--accent);
+  padding: 4px;
+}
+
+.picker-content {
+  text-align: right;
 }

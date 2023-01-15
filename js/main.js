@@ -40,3 +40,17 @@ export const getSquareColour = (colour) => [
   getHslColour(colour).rotate(180).rgb(),
   getHslColour(colour).rotate(270).rgb()
 ]
+
+let colorWell
+window.addEventListener("load", startup, false)
+
+const start = () => {
+  colorWell = document.querySelector("#colour")
+  colorWell.value = defaultColor
+  colorWell.addEventListener("input", updateFirst, false)
+  colorWell.addEventListener("change", updateAll, false)
+  colorWell.select()
+  
+}
+
+start()
