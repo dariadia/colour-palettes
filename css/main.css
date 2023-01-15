@@ -18,19 +18,7 @@ html {
 
 main {
   padding: 24px;
-  min-height: 76vh;
-}
-
-@media screen and (max-width: 1200px) {
-  main {
-    min-height: 85vh;
-  }
-}
-
-@media screen and (max-width: 820px) {
-  main {
-    min-height: 90vh;
-  }
+  min-height: 100%;
 }
 
 main > div {
