@@ -13,14 +13,10 @@ h1 {
 body,
 html {
   height: 100%;
-  overflow: hidden;
 }
 
 main {
   padding: 24px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 24px;
   min-height: 76vh;
 }
 
@@ -59,7 +55,34 @@ pre {
   text-align: right;
 }
 
+.lead-in,
+.picker-content { 
+  display: inline-block;
+  width: 45%;
+}
+
+#result-palette {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: calc(100% - 48px);
+  margin: 0 auto 48px;
+}
+
+.colour-group {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+}
+
+.palette-samples {
+  display: flex;
+}
+
 .colour-sample {
-  height: 24px; 
-  width: 24px;
+  height: 64px; 
+  width: 64px;
+  font-size: 10px;
+  text-align: center;
+  margin: auto;
+  margin: 12px 8px;
 }

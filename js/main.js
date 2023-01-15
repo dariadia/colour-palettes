@@ -1,40 +1,42 @@
 import Color from "color"
 
+const isDarkColour = (colour) => Color(colour).isDark()
+
 const getHslColour = (colour) => Color(Color(colour).hsl())
 
-export const getPrimaryColour = (colour) => [ getHslColour(colour).rgb() ]
+const getPrimaryColour = (colour) => [ getHslColour(colour).rgb() ]
 
-export const getComplementaryColour = (colour) => [
+const getComplementaryColour = (colour) => [
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(180).rgb()
 ]
 
-export const getTriadColour = (colour) => [
+const getTriadColour = (colour) => [
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(120).rgb(),
   getHslColour(colour).rotate(120).rgb()
 ]
 
-export const getAnalogousColour = (colour) => [
+const getAnalogousColour = (colour) => [
   getHslColour(colour).rotate(-30).rgb(),
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(30).rgb()
 ]
 
-export const getSplitComplementaryColour = (colour) => [
+const getSplitComplementaryColour = (colour) => [
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(-30).rgb(),
   getHslColour(colour).rotate(30).rgb()
 ]
 
-export const getTetradicColour = (colour) => [
+const getTetradicColour = (colour) => [
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(90).rgb(),
   getHslColour(colour).rotate(180).rgb(),
   getHslColour(colour).rotate(240).rgb()
 ]
 
-export const getSquareColour = (colour) => [
+const getSquareColour = (colour) => [
   getHslColour(colour).rgb(),
   getHslColour(colour).rotate(90).rgb(),
   getHslColour(colour).rotate(180).rgb(),
@@ -57,12 +59,11 @@ const updatePalette = (event) => {
       
     ]
     resultPalette.innerHTML = result.map(group => `
-      <div>
+      <div class="colour-group">
         <h5>${group.title}</h6>
-        <br/>
-        ${group.items.map(colour => `<div class="colour-sample" style="background-color: ${colour};"></div>`)}
+        <div class="palette-samples">${group.items.map(colour => `<div class="colour-sample" style="background-color: ${colour}; color:${isDarkColour(colour) ? "white" : "black"}">${Color(colour).hex()}</div>`).join("")}</div>
       </div>`
-    )
+    ).join("")
   }
 }
 
@@ -75,7 +76,7 @@ const updateInput = (event) => {
 
 const start = () => {
   colorWell = document.querySelector("#colour")
-  colorWell.addEventListener("input", updateInput, false)
+  colorWell.addEventListener("input", updatePalette, false)
   colorWell.addEventListener("change", updatePalette, false)
   colorWell.select()
 }
