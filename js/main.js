@@ -42,15 +42,27 @@ export const getSquareColour = (colour) => [
 ]
 
 let colorWell
-window.addEventListener("load", startup, false)
+
+const updatePalette = (event) => {
+  updateInput(event)
+  const resultPalette = document.querySelector("#result-palette")
+  if (resultPalette) {
+    resultPalette.innerHTML = event.target.value
+  }
+}
+
+const updateInput = (event) => {
+  const colourInput = document.querySelector("#colour-input")
+  if (colourInput) {
+    colourInput.value = event.target.value
+  }
+}
 
 const start = () => {
   colorWell = document.querySelector("#colour")
-  colorWell.value = defaultColor
-  colorWell.addEventListener("input", updateFirst, false)
-  colorWell.addEventListener("change", updateAll, false)
+  colorWell.addEventListener("input", updateInput, false)
+  colorWell.addEventListener("change", updatePalette, false)
   colorWell.select()
-  
 }
 
 start()
