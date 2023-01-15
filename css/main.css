@@ -58,3 +58,8 @@ pre {
 .picker-content {
   text-align: right;
 }
+
+.colour-sample {
+  height: 24px; 
+  width: 24px;
+}
