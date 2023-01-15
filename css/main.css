@@ -17,7 +17,21 @@ html {
 }
 
 main {
-  min-height: calc(100vh - 114px);
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin:-top 0;
+  text-align: right;
+  color: var(--accent);
+  filter: brightness(0.6);
+  font-style: italic;
 }
 
 footer,
