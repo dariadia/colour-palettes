@@ -44,6 +44,7 @@ const getSquareColour = (colour) => [
 ]
 
 let colorWell
+let colourInput
 
 const updatePalette = (event) => {
   updateInput(event)
@@ -68,7 +69,6 @@ const updatePalette = (event) => {
 }
 
 const updateInput = (event) => {
-  const colourInput = document.querySelector("#colour-input")
   if (colourInput) {
     colourInput.value = event.target.value
   }
@@ -76,9 +76,11 @@ const updateInput = (event) => {
 
 const start = () => {
   colorWell = document.querySelector("#colour")
+  colourInput = document.querySelector("#colour-input")
   colorWell.addEventListener("input", updatePalette, false)
   colorWell.addEventListener("change", updatePalette, false)
   colorWell.select()
+  colourInput.addEventListener("input", updatePalette, false)
 }
 
 start()
