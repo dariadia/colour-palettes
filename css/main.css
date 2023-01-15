@@ -13,11 +13,24 @@ h1 {
 body,
 html {
   height: 100%;
+  position: relative;
 }
 
 main {
   padding: 24px;
   min-height: 76vh;
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    min-height: 85vh;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  main {
+    min-height: 90vh;
+  }
 }
 
 main > div {
@@ -26,11 +39,12 @@ main > div {
 
 h1 {
   margin: 0;
+  text-align: center;
 }
 
 h2 {
   margin:-top 0;
-  text-align: right;
+  text-align: center;
   color: var(--accent);
   filter: brightness(0.6);
   font-style: italic;
@@ -39,10 +53,16 @@ h2 {
 footer,
 header {
   min-height: 24px;
-  background-color: var(--dark);
-  box-shadow: var(--main) 0px 1px 4px, var(--main) 0px 0px 0px 3px;
   padding: 24px;
   box-sizing: border-box;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100vw;
+  background-color: var(--dark);
+  box-shadow: var(--main) 0px 1px 4px, var(--main) 0px 0px 0px 3px;
 }
 
 pre {
@@ -52,13 +72,11 @@ pre {
 }
 
 .picker-content {
-  text-align: right;
+  text-align: center;
 }
 
-.lead-in,
-.picker-content { 
-  display: inline-block;
-  width: 45%;
+#colour-input {
+  margin-top: 12px;
 }
 
 #result-palette {
