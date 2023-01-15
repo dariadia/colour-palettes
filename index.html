@@ -1,32 +1,40 @@
 <!doctype html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
+  <title>Colour palette generator</title>
+  <meta name="description" content="Create a colour scheme">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
+  <meta property="og:title" content="Colour palette generator">
   <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
+  <script src="https://kit.fontawesome.com/64b5402281.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <main>
+    <div class="lead-in">
+      <h1>Create a colour scheme for your needs</h1>
+      <h2>choose from palette variants</h2>
+    </div>
+    <div class="picker-content">
+      <label for="colour">Select a colour:</label>
+      <input type="color" id="colour" name="colour" value="#e0efff">
+      <br />
+      <br />
+      <label for="colourInput">Or write it's <pre>hex</pre> code:</label>
+      <br />
+      <input id="colour-input" name="colourInput" value="#e0efff">
+    </div>
+    <div id="result-palette"></div>
+  </main>
+  <footer>Build by <a href="https://github.com/dariadia/" target="_blank" ><i class="fa-brands fa-github"></i> dariadia</a>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>
